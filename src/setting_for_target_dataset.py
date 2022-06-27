@@ -12,14 +12,15 @@ args
     * target_column
 
     * use_label_weight
-    * focal_alpha
-    * focal_gamma
+    * focal_alpha   x
+    * focal_gamma   x
 
     ---
     * board type -> wandb or tensorboard
     * using_model -> default : bert.
     * device -> default : cpu.
     * text_column 
+    * model_save_path -> default : "./../mdoel_save"
 
 '''
 
