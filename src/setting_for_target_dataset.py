@@ -1,4 +1,5 @@
 from argparse import ArgumentError, Namespace
+from typing import Type
 import pandas as pd
 import numpy as np
 
@@ -65,7 +66,7 @@ class ExtractArgsFromData:
     def get_unique(self, target_dataset):
         try:
             dataset_unique, label_cnts = np.unique(target_dataset.loc[:, self.args.target_column], return_counts = True)
-        except:
+        except TypeError:
             raise TypeError(f'datas in {self.args.target_column} column, need to convert Int.')
         print(f'target_column : {self.args.target_column}')
         print(f'dataset_unique : {dataset_unique}')

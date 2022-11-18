@@ -19,7 +19,7 @@ class ActCollateFN:
         batch['toked_output'] = toked_output
 
         return batch
-
+        
     def check_text_column(self):
         if self.args.text_column is None:
             raise ArgumentError('Please, define "--text_column" argument.')

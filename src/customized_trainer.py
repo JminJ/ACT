@@ -3,6 +3,7 @@ from transformers import Trainer, AutoTokenizer
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
+from overrides import overrides
 
 class ActTrainer(Trainer):
     def __init__(self, args:Namespace, extracted_data:dict):
@@ -15,6 +16,7 @@ class ActTrainer(Trainer):
         else:
             self.weighted_loss = None
 
+    @overrides
     def compute_loss(self, model, inputs, return_outputs=False):
         if self.label_smoother is not None and "labels" in inputs:
             labels = inputs.pop("labels")
